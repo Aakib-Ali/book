@@ -1,0 +1,27 @@
+export interface Admin {
+  id: string;
+  name: string;
+  email: string;
+  role: string;
+  lastLogin?: Date;
+  isActive: boolean;
+  token:string;
+  expiresIn:number;
+}
+
+export interface LoginRequest {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponse {
+  token: string;
+  admin: Admin;
+  expiresIn: number;
+}
+
+export interface ApiResponse<T>{
+  sussess:string;
+  message:string;
+  data: T;
+}
